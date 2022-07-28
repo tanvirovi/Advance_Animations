@@ -30,6 +30,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailedBinding.inflate(layoutInflater)
         val view = binding.root
+
         setContentView(view)
 
         url = binding.myHeader.url

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp"
+            app:layoutDescription="@xml/content_detail_scene"
+            app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
+            app:motionDebug="SHOW_PATH">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="0dp"
+                android:layout_height="1000dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/earth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/earth"
+                tools:layout_editor_absoluteY="116dp" />
+
+            <ImageView
+                android:id="@+id/uranus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/uranus" />
+
+            <ImageView
+                android:id="@+id/right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/right"
+                tools:layout_editor_absoluteY="84dp" />
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/url"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/url"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/third_option"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/status"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/app_description"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/ok" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

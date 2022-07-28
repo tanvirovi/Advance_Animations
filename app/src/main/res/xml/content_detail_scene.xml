@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/right"
+                motion:percentY="1" />
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/right"
+                motion:percentY="0.5" />
+            <KeyPosition
+                motion:framePosition="75"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/right"
+                motion:percentY="1" />
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/earth"
+                android:alpha="0.0"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/uranus"
+                android:alpha="1.0"/>
+            <KeyAttribute
+                android:translationY="500dp"
+                motion:framePosition="100"
+                motion:motionTarget="@id/background" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/earth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/uranus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotationY="@integer/material_motion_duration_long_1"
+            android:alpha="0.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/earth" />
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="0dp"
+            android:layout_height="1000dp"
+            motion:layout_anchor="@+id/appbar_layout"
+            motion:layout_anchorGravity="center"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/uranus"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+    </ConstraintSet>
+</MotionScene>
